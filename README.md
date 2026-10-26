@@ -2,6 +2,8 @@
 
 Minimal system-wide coloured bash prompt for Debian/Ubuntu.
 
+<img width="519" height="280" alt="examples" src="examples.jpg" >
+
 - Respects terminal theme (classic `01;32` style codes)
 - Optional true-colour (`#RRGGBB`)
 - Hostname colour is primary
@@ -10,7 +12,7 @@ Minimal system-wide coloured bash prompt for Debian/Ubuntu.
 - Conversion runs only once per shell
 - Survives package upgrades
 
-**Authored by KreAch3R**  
+**Authored by KreAch3R**
 **Implemented by Grok (xAI)**
 
 ## One-line install
@@ -28,7 +30,6 @@ HOSTNAME_COLOR="01;32"        # stock green (default)
 # HOSTNAME_COLOR="01;31"      # red
 # HOSTNAME_COLOR="#FF5555"    # true-colour
 
-# Optional overrides
 # USERNAME_COLOR="01;36"
 # ROOT_COLOR="01;31"
 ```
@@ -51,6 +52,14 @@ USERNAME_COLOR="01;33"        # yellow username
 HOSTNAME_COLOR="01;36"
 ROOT_COLOR="01;31"
 ```
+
+## Caveats
+ * Non-login or non-interactive shells like `su -`, `su -l` won't work
+ * screen won't work by default on Debian Trixie, needs >5.0.2 (source built) and this `~/.screenrc`:
+ ```
+ defshell -bash
+ truecolor on
+ ```
 
 ## Disable
 
